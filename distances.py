@@ -1,4 +1,6 @@
 import numpy as np
+from scipy.stats import multivariate_normal
+import astropy.units as u
 
 # temp params used to test the code (copied them from a specific star from the
 # paper)
@@ -44,6 +46,7 @@ def method_mcmc(params, cov_matrix):
     return 0, 0
 
 def run_mc_sim(params, cov_matrix):
-    return [0, 0, 1]
+    rvs = multivariate_normal.rvs(mean=params, cov=cov_matrix)
+    return rvs
 
 calc_distance(params_star, cov_matrix_star)
