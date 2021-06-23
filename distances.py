@@ -40,7 +40,7 @@ def method_simple(params, cov_matrix):
     # calculate mean and std of the calculated distances
     distance = np.mean(dist_arr)
     sigma_distance = np.std(dist_arr)
-    return distance, sigma_distance
+    return distance*10**3, sigma_distance*10**3
 
 def method_mcmc(params, cov_matrix):
     return 0, 0
