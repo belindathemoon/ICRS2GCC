@@ -20,17 +20,30 @@ def calc_distance(params, cov_matrix):
     sigma_parallax = np.sqrt(cov_matrix[2, 2])
     f = sigma_parallax/parallax
     if f > 0.1 or f < 0:
-        distance = method_mcmc(params, cov_matrix)
+        distance, sigma_distance = method_mcmc(params, cov_matrix)
     else:
-        distance = method_simple(params, cov_matrix)
-    return distance
+        distance, sigma_distance = method_simple(params, cov_matrix)
+    return distance, sigma_distance
 
 def method_simple(params, cov_matrix):
-    print('Using simple method')
-    return 0
+    num_sim = 100
+    dist_arr = np.zeros(num_sim)
+    # run 100 monte carlo simulations
+    for i in range(num_sim):
+        mc_sim = run_mc_sim(params, cov_matrix)
+        ## save distance values
+        parallax_sim = mc_sim[2]
+        dist_sim = 1/parallax_sim
+        dist_arr[i] = dist_sim
+    # calculate mean and std of the calculated distances
+    distance = np.mean(dist_arr)
+    sigma_distance = np.std(dist_arr)
+    return distance, sigma_distance
 
 def method_mcmc(params, cov_matrix):
-    print('Using complicated method')
-    return 0
+    return 0, 0
 
-# calc_distance(params_star, cov_matrix_star)
+def run_mc_sim(params, cov_matrix):
+    return [0, 0, 1]
+
+calc_distance(params_star, cov_matrix_star)
