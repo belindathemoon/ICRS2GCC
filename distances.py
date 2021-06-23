@@ -18,7 +18,7 @@ params_star = [pm_ra_star, pm_dec_star, parallax_star]
 def calc_distance(params, cov_matrix):
     parallax = params[2]
     sigma_parallax = np.sqrt(cov_matrix[2, 2])
-    f = sigma_parallax/sigma_parallax
+    f = sigma_parallax/parallax
     if f > 0.1 or f < 0:
         distance = method_mcmc(params, cov_matrix)
     else:
@@ -30,5 +30,7 @@ def method_simple(params, cov_matrix):
     return 0
 
 def method_mcmc(params, cov_matrix):
-    print('Usign complicated method')
+    print('Using complicated method')
     return 0
+
+# calc_distance(params_star, cov_matrix_star)
