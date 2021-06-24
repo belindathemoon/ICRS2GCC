@@ -1,12 +1,12 @@
 # ICRS2GCC
------------
 *Project with Fredi Quispe H, Antonia Fernandez, and Belinda Blakley*
+-----------
 
 ## Objective:
 
 To carry out the transformation of coordinates from ICRS (International Celestial Reference System) to Galactocentric coordinates (GCC) using Bayesian method for stars with full astrometric information in Gaia.
 
-[ α,δ,μ<sup>∗</sup><sub>α</sub>,μδ,ϖ,rv ]<sub>ICRS</sub>→[ X,Y,Z,Vx,Vy,Vz ].CGC
+[ α,δ,μ<sup>∗</sup><sub>α</sub>,μδ,ϖ,rv ]<sub>ICRS</sub>→[ X,Y,Z,Vx,Vy,Vz ]<sub>CGC</sub>
 
 ## Theoretical framework:
 
