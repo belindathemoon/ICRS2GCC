@@ -1,3 +1,4 @@
+"""Functions to perform distance transformations"""
 import numpy as np
 from scipy.stats import multivariate_normal
 import emcee
@@ -29,6 +30,15 @@ cov_matrix_star = np.diag([sigma_pm_ra_star**2, sigma_pm_dec_star**2,
 params_star = [pm_ra_star, pm_dec_star, parallax_star]
 
 def calc_distance(params, cov_matrix):
+    """Calculate Distances
+
+    Args:
+        params (array): length 3 vector.
+        cov_matrix (array): 3x3 matrix.
+
+    Returns:
+        distance and standard deviation
+    """
     parallax = params[2]
     sigma_parallax = np.sqrt(cov_matrix[2, 2])
     f = sigma_parallax/parallax
@@ -39,6 +49,18 @@ def calc_distance(params, cov_matrix):
     return distance, sigma_distance
 
 def method_simple(params, cov_matrix):
+    """Simple Method 
+    
+    For parallaxes that have large errors or negative
+    Runs 100 Monte Carlo simulations and calculates the mean and SD of the calculated distances
+    
+    Args:
+        params (array): length 3 vector.
+        cov_matrix (array): 3x3 matrix.
+
+    Returns:
+        distance and standard deviation
+    """
     num_sim = 100
     dist_arr = np.zeros(num_sim)
     # run 100 monte carlo simulations

@@ -154,7 +154,44 @@
             
   <div class="section" id="distances">
 <span id="id1"></span><h1>Distances<a class="headerlink" href="#distances" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-distances"></span></div>
+<span class="target" id="module-distances"></span><p>Functions to perform distance transformations</p>
+<dl class="py function">
+<dt id="distances.calc_distance">
+<code class="sig-prename descclassname"><span class="pre">distances.</span></code><code class="sig-name descname"><span class="pre">calc_distance</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cov_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distances.calc_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate Distances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>array</em>) – length 3 vector.</p></li>
+<li><p><strong>cov_matrix</strong> (<em>array</em>) – 3x3 matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>distance and standard deviation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="distances.method_simple">
+<code class="sig-prename descclassname"><span class="pre">distances.</span></code><code class="sig-name descname"><span class="pre">method_simple</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cov_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distances.method_simple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple Method</p>
+<p>For parallaxes that have large errors or negative
+Runs 100 Monte Carlo simulations and calculates the mean and SD of the calculated distances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>array</em>) – length 3 vector.</p></li>
+<li><p><strong>cov_matrix</strong> (<em>array</em>) – 3x3 matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>distance and standard deviation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 
 
            </div>
