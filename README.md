@@ -1,17 +1,20 @@
-# codeastro2021-group22
-Project with Fredi Quispe H and Antonia Fernandez: To carry out the transformation of coordinates from ICRS (International Celestial Reference System) to Galactocentric coordinates (CGC) using Bayesian method for stars with full astrometric information in Gaia.
+# ICRS2GCC
+*Project with Fredi Quispe H, Antonia Fernandez, and Belinda Blakley*
+-----------
 
-# Objective:
+## Objective:
 
-To carry out the transformation of coordinates from ICRS (International Celestial Reference System) to Galactocentric coordinates (CGC) using Bayesian method for stars with full astrometric information in Gaia.
+To carry out the transformation of coordinates from ICRS (International Celestial Reference System) to Galactocentric coordinates (GCC) using Bayesian method for stars with full astrometric information in Gaia.
 
-[α,δ,μ^∗.α,μδ,ϖ,rv].ICRS→[X,Y,Z,Vx,Vy,Vz].CGC
+[ α,δ,μ<sup>∗</sup><sub>α</sub>,μδ,ϖ,rv ]<sub>ICRS</sub>→[ X,Y,Z,Vx,Vy,Vz ]<sub>CGC</sub>
 
-# Theoretical framework:
+## Theoretical framework:
 
 To carry out the transformation from ICRS to CGC, it is necessary to have the following parameters:  Position,  proper motion in right ascension and decline, distance and radial velocity.  However, in order to take into account the correlation coefficients between the parameters (given by Gaia) and the propagation of  errors  during  the  transformation,  for  stars  with  relative  error  in  parallax (f≡σϖ/ϖ<0.1) and (f >0.1), it is necessary to perform a Bayesian treatment. This procedure is described in Marchetti et al.  2018 for both cases.
 
-# Steps:
+-----------
+
+## Steps:
 
 1.  Query object from Gaia EDR3 database (for this step we can use astroquery)
 
