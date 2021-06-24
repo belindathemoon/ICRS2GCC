@@ -66,7 +66,7 @@ def prior(d):
     return p
 
 def likelihood(d, parallax, sigma_parallax):
-    like = np.exp(-1/(2*sigma_parallax**2)*(parallax-1/d))
+    like = np.exp(-1/(2*sigma_parallax**2)*(parallax-1/d)**2)
     return like
 
 def posterior(d, parallax, sigma_parallax):
@@ -74,4 +74,18 @@ def posterior(d, parallax, sigma_parallax):
     like = likelihood(d, parallax, sigma_parallax)
     return p*like
 
-calc_distance(params_star, cov_matrix_star)
+def run_mcmc(d, parallax, sigma_parallax):
+    nwalkers = 32
+    pos = d + 1e-4 * np.random.randn(nwalkers, 1)
+    #ndim, nwalkers = pos.shape
+    sampler = emcee.EnsembleSampler(nwalkers, 1, posterior,
+                                    args=(parallax, sigma_parallax))
+    sampler.run_mcmc(pos, 5000, progress=True)#, skip_initial_state_check=True)
+    flat_samples = sampler.get_chain(discard=100, thin=15, flat=True)
+    print(np.mean(flat_samples))
+    mcmc = np.percentile(flat_samples[:], [16, 50, 84])
+    print(mcmc)
+
+
+#calc_distance(params_star, cov_matrix_star)
+run_mcmc(1/parallax_star, parallax_star, sigma_parallax_star)
