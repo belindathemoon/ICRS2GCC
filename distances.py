@@ -69,4 +69,9 @@ def likelihood(d, parallax, sigma_parallax):
     like = np.exp(-1/(2*sigma_parallax**2)*(parallax-1/d))
     return like
 
+def posterior(d, parallax, sigma_parallax):
+    p = prior(d)
+    like = likelihood(d, parallax, sigma_parallax)
+    return p*like
+
 calc_distance(params_star, cov_matrix_star)
