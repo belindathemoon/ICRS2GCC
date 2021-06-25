@@ -154,6 +154,103 @@
             
   <div class="section" id="icrs2gcc">
 <span id="id1"></span><h1>ICRS2GCC<a class="headerlink" href="#icrs2gcc" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-icrs2gcc"></span><p>Functions to perform the transformation from ICRS coordinates to Galactocentric coordinates using the star’s parallax</p>
+<dl class="py class">
+<dt id="icrs2gcc.ICRS2GCC">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">icrs2gcc.</span></code><code class="sig-name descname"><span class="pre">ICRS2GCC</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#icrs2gcc.ICRS2GCC" title="Permalink to this definition">¶</a></dt>
+<dd><p>The class defines the object as a star with a Gaia ID.
+When defining an object with this class, the ID is the class argument.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>source_id</strong> (<em>str</em>) – Gaia ID</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="icrs2gcc.ICRS2GCC.bayes_distance">
+<code class="sig-name descname"><span class="pre">bayes_distance</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#icrs2gcc.ICRS2GCC.bayes_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Coming in next release:</em> Function that returns the heliocentric distance using bayes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>heliocentric distance in pc (parsec) units using bayes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>distance (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="icrs2gcc.ICRS2GCC.cov_matrix">
+<code class="sig-name descname"><span class="pre">cov_matrix</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#icrs2gcc.ICRS2GCC.cov_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that returns the covariance matrix using uncertainties and correlations coefficient from Gaia</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>matrix covariance</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>matrix covariance (numpy array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="icrs2gcc.ICRS2GCC.distance">
+<code class="sig-name descname"><span class="pre">distance</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#icrs2gcc.ICRS2GCC.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that returns the heliocentric distance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>heliocentric distance in pc (parsec) units</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>distance (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="icrs2gcc.ICRS2GCC.icrs_to_gcc">
+<code class="sig-name descname"><span class="pre">icrs_to_gcc</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#icrs2gcc.ICRS2GCC.icrs_to_gcc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that returns the star position and velocity in galactocentric coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the first three elements are the position coordinates in pc units and the rest are the velocity coordinates in km/s units</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>galactocentric coordinates (float numpy array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="icrs2gcc.ICRS2GCC.query_gaia_object">
+<code class="sig-name descname"><span class="pre">query_gaia_object</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#icrs2gcc.ICRS2GCC.query_gaia_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that returns all gaia information for the object with id source_id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>astrometric and photometric information for the object with id source_id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Gaia information (astropy table)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="icrs2gcc.ICRS2GCC.relative_error_parallax">
+<code class="sig-name descname"><span class="pre">relative_error_parallax</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#icrs2gcc.ICRS2GCC.relative_error_parallax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that returns all gaia information for the object with id source_id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>astrometric and photometric information for the object with id source_id</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Gaia information (astropy table)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -1,10 +1,10 @@
 .. ICRS2GCC documentation master file, created by
-   sphinx-quickstart on Wed Jun 23 17:25:03 2021.
+   sphinx-quickstart on Fri Jun 25 07:02:54 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ICRS2GCC's documentation!
-====================================
+ICRS2GCC documentation
+======================
 
 .. toctree::
    :maxdepth: 2

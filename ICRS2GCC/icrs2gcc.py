@@ -1,16 +1,27 @@
+"""Functions to perform the transformation from ICRS coordinates to Galactocentric coordinates using the star's parallax"""
+
 import numpy as np
 import astropy.units as u
 import astropy.coordinates as coord
 from astroquery.gaia import Gaia
 
 class ICRS2GCC():
+    """The class defines the object as a star with a Gaia ID. 
+    When defining an object with this class, the ID is the class argument.
+
+    Args:
+        source_id (str): Gaia ID
+    """
 
     def __init__(self, source_id):
+        """Constructor method
+        """
         self.source_id = source_id
     
     def query_gaia_object(self):
         """
         Function that returns all gaia information for the object with id source_id
+
         
         Returns:
             Gaia information (astropy table): astrometric and photometric information for the object with id source_id
@@ -78,16 +89,16 @@ class ICRS2GCC():
         if f > 0 and f <= 0.1:
             return 1000/r['parallax'][0]
         else:
-            print("It is not possible to obtain the heliocentric distance, because this star have a high relative error in parallax. In this case is neccesary a bayesian treatment which will be implemented for the next version.")
+            print("It is not possible to obtain the heliocentric distance, because this star has a high relative error in parallax. In this case is neccesary a bayesian treatment which will be implemented for the next version.")
 
     def bayes_distance(self):
         """
-        Function that returns the heliocentric distance using bayes 
+        *Coming in next release:* Function that returns the heliocentric distance using bayes 
         
         Returns:
             distance (float): heliocentric distance in pc (parsec) units using bayes
         """
-        print('the distance should be calculated using bayes and the function now is in construction')
+        print('the distance should be calculated using bayes (coming in a future release)')
 
     def icrs_to_gcc(self):
         """
@@ -111,4 +122,4 @@ class ICRS2GCC():
             gcc = np.array([gc.x.value[0], gc.y.value[0], gc.z.value[0], gc.v_x.value[0], gc.v_y.value[0], gc.v_z.value[0]])
             return gcc
         else:
-            print("It is not possible to obtain the galactocentric coordinate for this star, because this star have a high relative error in parallax. In this case is neccesary a bayesian treatment which will be implemented for the next version.")
+            print("It is not possible to obtain the galactocentric coordinate for this star, because this star has a high relative error in parallax. In this case is neccesary a bayesian treatment which will be implemented for the next version.")
