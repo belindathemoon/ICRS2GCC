@@ -6,7 +6,7 @@
 
 To carry out the transformation of coordinates from ICRS (International Celestial Reference System) to GalactoCentric coordinates (GCC) using Bayesian method for stars with full astrometric information in Gaia.
 
-<img src="https://render.githubusercontent.com/render/math?math=\left[ \alpha,~\delta,~\mu_{\alpha}*~\mu_{\delta},~\varpi,~rv \right]_{ICRS}\rightarrow \left[X,~Y,~Z,~V_{x},~V_{y},~V_{z} \right]_{CGC}">
+<img src="https://render.githubusercontent.com/render/math?math=\left[ \alpha, \delta, \mu_{\alpha}* \mu_{\delta}, \varpi, rv \right]_{ICRS}\rightarrow \left[X, Y, Z, V_{x}, V_{y}, V_{z} \right]_{CGC}">
 
 ## Theoretical framework:
 
