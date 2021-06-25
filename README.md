@@ -1,3 +1,6 @@
+---
+useMath: true
+---
 # ICRS2GCC
 *Project with Fredi Quispe H, Antonia Fernandez, and Belinda Blakley*
 -----------
