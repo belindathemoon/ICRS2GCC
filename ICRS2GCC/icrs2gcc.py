@@ -5,7 +5,7 @@ import astropy.units as u
 import astropy.coordinates as coord
 from astroquery.gaia import Gaia
 
-class ICRS2GCC():
+class Star():
     """The class defines the object as a star with a Gaia ID. 
     When defining an object with this class, the ID is the class argument.
 
